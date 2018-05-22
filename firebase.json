@@ -1,0 +1,62 @@
+{
+  "functions": {
+    "predeploy": [
+      "npm --prefix \"$RESOURCE_DIR\" run lint"
+    ],
+    "source": "functions"
+  },
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "headers": [{
+      "source": "*",
+      "headers": [{
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "POST"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "*"
+        }, {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://localhost"
+        }, {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://127.0.0.1"
+        }, {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://localhost:*"
+        }, {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://127.0.0.1:*"
+        }
+
+      ]
+    }],
+    "rewrites": [{
+      "source": "/",
+      "destination": "/index.html"
+    }, {
+      "source": "/cuestionario",
+      "function": "helloWorld"
+    }, {
+      "source": "/getDatabase",
+      "function": "getDatabase"
+    }, {
+      "source": "/uploadUserData",
+      "function": "uploadUserData"
+    }]
+  }
+}
