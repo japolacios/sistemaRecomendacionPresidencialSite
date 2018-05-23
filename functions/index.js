@@ -1,5 +1,9 @@
 const functions = require('firebase-functions');
-//const firebase = require('firebase');
+const express = require('express');
+const cors = require('cors');
+const app = express();
+app.use(cors({ origin: true }));
+app.options('*', cors())
 
 //Import the database modules
 //Retreive PollQuestions
@@ -43,4 +47,15 @@ exports.uploadUserData = functions.https.onRequest((request, response) => {
         response.send("No se pudo Procesar tu informacion");
     }
 
+});
+
+//Cors
+app.get('/hola', (request, response) => 
+pollQuestions().then(objectPollQuestions => {
+    response.send(objectPollQuestions);
+    return objectPollQuestions;
+}).catch(reason => {
+    //If there is any error
+    console.log(reason);
 })
+);
