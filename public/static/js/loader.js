@@ -10,7 +10,7 @@ $(document).ready(function () {
         pollQuestionData = Object.entries(data.recomendacion);
         //console.log(pollQuestionData);
         for (var i = pollQuestionData.length - 1; i >= 0; i--) {
-            //Gets the iteated object from the entries array 
+            //Gets the iterated object from the entries array
             tempContainer = pollQuestionData[i];
             //Gets the second object from the itrated object ( the second one has the information)
             tempData = tempContainer[1];
