@@ -57,6 +57,9 @@
     }, {
       "source": "/uploadUserData",
       "function": "uploadUserData"
+    },{
+    	"source": "/hola",
+    	"function": "app"
     }]
   }
 }
