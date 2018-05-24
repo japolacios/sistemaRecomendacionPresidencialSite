@@ -7,7 +7,8 @@ $(document).ready(function () {
 
         var pollQuestionData = [];
         //Gets the key entries from the raw json
-        pollQuestionData = Object.entries(data.recomendacion);
+        pollQuestionData = Object.entries(data);
+
         //console.log(pollQuestionData);
         for (var i = pollQuestionData.length - 1; i >= 0; i--) {
             //Gets the iterated object from the entries array

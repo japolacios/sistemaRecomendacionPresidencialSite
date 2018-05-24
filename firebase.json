@@ -29,18 +29,6 @@
         {
           "key": "Access-Control-Allow-Methods",
           "value": "*"
-        }, {
-          "key": "Access-Control-Allow-Origin",
-          "value": "https://localhost"
-        }, {
-          "key": "Access-Control-Allow-Origin",
-          "value": "https://127.0.0.1"
-        }, {
-          "key": "Access-Control-Allow-Origin",
-          "value": "https://localhost:*"
-        }, {
-          "key": "Access-Control-Allow-Origin",
-          "value": "https://127.0.0.1:*"
         }
 
       ]
@@ -57,9 +45,9 @@
     }, {
       "source": "/uploadUserData",
       "function": "uploadUserData"
-    },{
-    	"source": "/hola",
-    	"function": "app"
+    }, {
+      "source": "/hola",
+      "function": "app"
     }]
   }
 }

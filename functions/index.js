@@ -2,9 +2,11 @@ const functions = require('firebase-functions');
 const express = require('express');
 const cors = require('cors');
 const app = express();
-app.use(cors({ origin: true }));
+app.use(cors({
+    origin: true
+}));
 app.options('*', cors())
-
+exports.app = functions.https.onRequest(app);
 //Import the database modules
 //Retreive PollQuestions
 var pollQuestions = require('./model/database').retreivePoll;
@@ -50,12 +52,12 @@ exports.uploadUserData = functions.https.onRequest((request, response) => {
 });
 
 //Cors
-app.get('/hola', (request, response) => 
-pollQuestions().then(objectPollQuestions => {
-    response.send(objectPollQuestions);
-    return objectPollQuestions;
-}).catch(reason => {
-    //If there is any error
-    console.log(reason);
-})
+app.get('/hola', (request, response) =>
+    pollQuestions().then(objectPollQuestions => {
+        response.send(objectPollQuestions);
+        return objectPollQuestions;
+    }).catch(reason => {
+        //If there is any error
+        console.log(reason);
+    })
 );
