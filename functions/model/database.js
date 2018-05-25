@@ -83,7 +83,7 @@ exports.retreiveGlobalData = function () {
 exports.updateGlobalData = function (newGlobalData) {
     //function updateGlobalData(newGlobalData) {
 
-    console.log("Sending Update to server", newGlobalData);
+    //console.log("Sending Update to server", newGlobalData);
 
     var dbRef = firebase.database().ref();
     dbRef.child('global/').update(newGlobalData);
