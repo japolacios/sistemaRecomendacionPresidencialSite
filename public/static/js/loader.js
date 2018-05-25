@@ -7,7 +7,8 @@ $(document).ready(function () {
 
         var pollQuestionData = [];
         //Gets the key entries from the raw json
-        pollQuestionData = Object.entries(data.recomendacion);
+        pollQuestionData = Object.entries(data);
+
         //console.log(pollQuestionData);
         for (var i = pollQuestionData.length - 1; i >= 0; i--) {
             //Gets the iterated object from the entries array
@@ -25,9 +26,8 @@ $(document).ready(function () {
             });
         }
         console.log(pollQuestionsProcesed);
-        addToDom();
+        //addToDom();
     });
-
 
 });
 
@@ -46,6 +46,8 @@ addToDom = function () {
         var petro = pollQuestionsProcesed[i].petro;
         var duque = pollQuestionsProcesed[i].duque;
         var tempHtml = "<ul><li>Pregunta: " + pregunta + "</li><li>vargas: " + vargas + "</li><li>calle: " + calle + "</li><li>Fajardo: " + fajardo + "</li><li>Petro: " + petro + "</li><li>Duque: " + duque + "</li></ul>"
+
+        var tempHtmlDos = "<div><p>" + "Introduccion" + "</div></p>"
         console.log(tempHtml);
         //El innerHtml remplaza lo que tenga previamente el elemento (body para este caso), por ende solo veran la lista de los ultimos del ciclo. Para hacer buen uso de eso les recomiendo utilizar los appends y no innerHtml, pero ya es el gusto de cada quien.
         document.getElementById("domBody").innerHTML = tempHtml;

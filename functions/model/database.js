@@ -19,7 +19,7 @@ function retreivePoll() {
 
         const myVlaues = snap.val();
 
-        console.log("SnapValues:", myVlaues);
+        //console.log("SnapValues:", myVlaues);
 
         //TODO: Must Preprocess the data to return an easy to handle json object
         return myVlaues;
