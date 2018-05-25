@@ -1,6 +1,55 @@
 {
-    "pregunta": "Hola khe ase?",
-    "miguel": 1,
-    "peter": 5,
-    "tumama": 2
+    "global": {
+        "ageAvg": 25,
+        "bachiller": 1,
+        "calle": 1,
+        "doctorado": 0,
+        "duque": 1,
+        "estrato1": 0,
+        "estrato2": 0,
+        "estrato3": 1,
+        "estrato4": 1,
+        "estrato5": 1,
+        "estrato6": 1,
+        "fajardo": 1,
+        "female": 2,
+        "generalQ": 1,
+        "interest1": "Hola1",
+        "interest2": "hola2",
+        "interest3": "hola3",
+        "male": 2,
+        "petro": 1,
+        "postgrado": 1,
+        "primaria": 1,
+        "profesional": 1,
+        "scholarshipAvg": "Bachiller",
+        "users": 4,
+        "vargas": 1
+    },
+    "poll": {
+        "-LD7hSUrAYCH4TxGxW-l": {
+            "calle": 1,
+            "duque": 0,
+            "fajardo": 3,
+            "petro": 4,
+            "pregunta": "¿Crees que la droga deba ser despenalizada en el país como fórmula para la lucha contra el narcotráfico?",
+            "vargas": 2
+        }
+    },
+    "userData": {
+        "-LCzneaxM3EJOdLRzGfK": {
+            "age": 1,
+            "calle": 1,
+            "duque": 1,
+            "fajardo": 5,
+            "generalTest": 1,
+            "interests": "Venecas",
+            "lleras": 1,
+            "name": "John Doe",
+            "petro": "2",
+            "profession": "Raponero",
+            "socialStat": 1,
+            "gender": "male"
+        }
+    }
 }

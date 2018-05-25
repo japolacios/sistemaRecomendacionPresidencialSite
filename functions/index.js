@@ -44,6 +44,7 @@ exports.uploadUserData = functions.https.onRequest((request, response) => {
         receiveData(object);
         //Respond with Render
         console.log("User Data Uploaded");
+        response.send("Data Succesfully Submited");
     } else {
         console.log("Got an empty Object");
         response.send("No se pudo Procesar tu informacion");
