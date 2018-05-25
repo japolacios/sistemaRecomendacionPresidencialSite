@@ -5,16 +5,17 @@ body{
 #logo-header{
     max-width: 100%;
     img{
-        max-width: 350px;
+        max-width: 300px;
         height: auto;
         display: block;
         margin: 0 auto;
+        padding: 30px;
     }
 }
 
 #zona-texto-intro{
 	max-width: 500px;
-	justify-content: center;
+
     margin: 0 auto;
     .texto-intro{
         padding: 25px 20px;
@@ -22,6 +23,8 @@ body{
         line-height: 25px;
         font-family: sans-serif;
         text-align: center;
+        text-align: justify;
+        text-justify: inter-word;
     }
 }
 
@@ -29,7 +32,8 @@ body{
 
 #zona-pregunta{
 	max-width: 500px;
-	justify-content: center;
+    justify-content: center;
+    display: block;
     margin: 0 auto;
     .titulo-pregunta{
         padding: 25px 20px;
@@ -69,14 +73,14 @@ body{
 	font-weight:bold;
 	padding:20px 60px;
 	text-decoration:none;
-	text-shadow:-1px 1px 5px #000000;
+    text-shadow:-1px 1px 5px #000000;
 }
 #si:hover {
-	background-color:$dark-green;
+    background-color:$dark-green;
 }
 #si:active {
-	position:relative;
-	top:1px;
+    position:relative;
+    top:1px;
 }
 
 #no {
@@ -91,15 +95,16 @@ body{
 	font-weight:bold;
 	padding:20px 60px;
 	text-decoration:none;
-	text-shadow:-1px 1px 5px $black;
+    text-shadow:-1px 1px 5px $black;
 }
 #no:hover {
-	background-color:$dark-red;
+    background-color:$dark-red;
 }
 #no:active {
-	position:relative;
-	top:1px;
+    position:relative;
+    top:1px;
 }
+
 
 #continuar, #continuar-formulario {
 	background-color:$light-blue;
@@ -136,7 +141,7 @@ body{
 form {
     display: block;
     position: relative;
-    width: 350px;
+    width: 300px;
     height: auto;
     margin: 50px auto;
     background: $white;
@@ -163,6 +168,7 @@ form {
     font-size: 16px;
     z-index: 2;
     background: none;
+
   }
 
   input:focus,

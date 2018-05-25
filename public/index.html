@@ -44,26 +44,35 @@
 
       <div class="divider"></div>
 
-      <input type="text" name="estrato" required autocomplete="off">
-      <label for="estrato">Estrato</label>
+      <select type="select" name="estrato" required autocomplete="off">
+        <option value="" selected>Estrato</option>
+        <option value="0">1</option>
+        <option value="1">2</option>
+        <option value="2">3</option>
+        <option value="3">4</option>
+        <option value="4">5</option>
+        <option value="5">6</option>
+      </select>
 
       <div class="divider"></div>
 
       <select type="select" name="profesion" required autocomplete="off">
-        <option value="0"></option>
-        <option value="1">Primaria</option>
-        <option value="2">Bachiller</option>
-        <option value="3">Profesional</option>
-        <option value="4">Postgrado</option>
-        <option value="5">Doctorado</option>
+        <option value="" selected>Educación</option>
+        <option value="0">Primaria</option>
+        <option value="1">Bachiller</option>
+        <option value="2">Profesional</option>
+        <option value="3">Postgrado</option>
+        <option value="4">Doctorado</option>
+
       </select>
-      <label for="profesion">Estudio</label>
+      <label for="profesion"></label>
 
       <div class="divider"></div>
 
-      <input type="text" name="genero" required autocomplete="off">
-      <label for="genero">Género</label>
-
+      <select type="select" name="genero" required autocomplete="off">
+        <option value="" selected>Género</option>
+        <option value="0">Hombre</option>
+        <option value="1">Mujer</option>
     </form>
   </div>
 
@@ -92,7 +101,7 @@
   <!--Scripts-->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="./static/js/loader.js"></script>
-  <script src="./static/js/intro.js"></script>
+  <script src="./static/js/cambioPantallas.js"></script>
 </body>
 
 </html>
