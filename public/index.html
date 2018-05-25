@@ -31,6 +31,43 @@
       a través de nuestro cuestionario con cuál candidato tienes mayor afinidad.
       <br> Al finalizar, se revelará tu porcentaje de afinidad con cada candidato y te daremos una sugerencia para votar.</p>
   </div>
+
+  <div id="formulario-demografico">
+    <form>
+      <input type="text" name="nombre" required autocomplete="off">
+      <label for="nombre">Nombre</label>
+
+      <div class="divider"></div>
+
+      <input type="text" name="edad" required autocomplete="off">
+      <label for="edad">Edad</label>
+
+      <div class="divider"></div>
+
+      <input type="text" name="estrato" required autocomplete="off">
+      <label for="estrato">Estrato</label>
+
+      <div class="divider"></div>
+
+      <select type="select" name="profesion" required autocomplete="off">
+        <option value="0"></option>
+        <option value="1">Primaria</option>
+        <option value="2">Bachiller</option>
+        <option value="3">Profesional</option>
+        <option value="4">Postgrado</option>
+        <option value="5">Doctorado</option>
+      </select>
+      <label for="profesion">Estudio</label>
+
+      <div class="divider"></div>
+
+      <input type="text" name="genero" required autocomplete="off">
+      <label for="genero">Género</label>
+
+    </form>
+  </div>
+
+
   <div id="zona-pregunta">
     <h1 class="titulo-pregunta">Pregunta
       <span class="numero-pregunta">1</span>
@@ -45,6 +82,7 @@
     <a href="#" id="si" class="button">Si</a>
     <a href="#" id="no" class="button">No</a>
     <a href="#" id="continuar" class="button">Continuar</a>
+    <a href="#" id="continuar-formulario" class="button">Continuar</a>
 
 
   </div>

@@ -30,14 +30,15 @@ body{
 #zona-pregunta{
 	max-width: 500px;
 	justify-content: center;
-	margin: 0 auto;
+    margin: 0 auto;
+    .titulo-pregunta{
+        padding: 25px 20px;
+        font-family: sans-serif;
+        text-align: center;
+    }
 }
 
-.titulo-pregunta{
-	padding: 25px 20px;
-	font-family: sans-serif;
-	text-align: center;
-}
+
 .pregunta{
 	padding: 25px 20px;
 	font-size: 18px;
@@ -57,12 +58,12 @@ body{
   }
 
 #si {
-	background-color:#56cc71;
+	background-color:$light-green;
 	-moz-border-radius:42px;
 	-webkit-border-radius:42px;
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
+	color:$white;
 	font-family:Arial;
 	font-size:24px;
 	font-weight:bold;
@@ -71,7 +72,7 @@ body{
 	text-shadow:-1px 1px 5px #000000;
 }
 #si:hover {
-	background-color:#33804e;
+	background-color:$dark-green;
 }
 #si:active {
 	position:relative;
@@ -79,43 +80,50 @@ body{
 }
 
 #no {
-	background-color:#cc5252;
+	background-color:$light-red;
 	-moz-border-radius:42px;
 	-webkit-border-radius:42px;
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
+	color:$white;
 	font-family:Arial;
 	font-size:24px;
 	font-weight:bold;
 	padding:20px 60px;
 	text-decoration:none;
-	text-shadow:-1px 1px 5px #000000;
+	text-shadow:-1px 1px 5px $black;
 }
 #no:hover {
-	background-color:#803232;
+	background-color:$dark-red;
 }
 #no:active {
 	position:relative;
 	top:1px;
 }
 
-#continuar {
-	background-color:#547ccc;
+#continuar, #continuar-formulario {
+	background-color:$light-blue;
 	-moz-border-radius:42px;
 	-webkit-border-radius:42px;
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
+	color:$white;
 	font-family:Arial;
 	font-size:24px;
 	font-weight:bold;
 	padding:20px 60px;
 	text-decoration:none;
-	text-shadow:-1px 1px 5px #000000;
+	text-shadow:-1px 1px 5px $black;
+}
+#continuar-formulario:hover {
+	background-color:$dark-blue;
+}
+#continuar-formulario:active {
+	position:relative;
+	top:1px;
 }
 #continuar:hover {
-	background-color:#335880;
+	background-color:$dark-blue;
 }
 #continuar:active {
 	position:relative;
@@ -123,3 +131,56 @@ body{
 }
 
 
+
+
+form {
+    display: block;
+    position: relative;
+    width: 350px;
+    height: auto;
+    margin: 50px auto;
+    background: $white;
+    padding: 50px 30px;
+  }
+
+  label {
+    display: block;
+    position: relative;
+    top: -20px;
+    left: 0;
+    color: $light-text-color;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    z-index: 1;
+  }
+
+  input, select {
+    display: block;
+    position: relative;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid $light-text-color;
+    font-size: 16px;
+    z-index: 2;
+    background: none;
+  }
+
+  input:focus,
+  input:valid {
+    outline: none;
+    border-bottom: 1px solid $light-blue;
+  }
+
+  input:focus + label,
+  input:valid + label {
+    font-size: 12px;
+    top: -40px;
+    color: $light-blue;
+  }
+
+  .divider {
+    display: block;
+    width: 100%;
+    height:30px;
+    background: none;
+  }
