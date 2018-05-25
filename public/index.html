@@ -20,21 +20,41 @@
 </head>
 
 <body id="domBody">
-
-  <div id="introduccion">
-    <div class="logo"></div>
-    <div class="h2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non totam nesciunt delectus repellat cumque facilis suscipit
-      labore. Dolorem rerum provident cum sunt. Rerum, mollitia ut totam velit dolore vero similique?Ex fugiat adipisci,
-      neque atque quam animi odit debitis architecto modi iste dolores? Officiis esse nesciunt ipsam placeat veritatis obcaecati,
-      cupiditate iste voluptatum corporis, maxime praesentium consequuntur qui. Consequatur, laborum?
+  <header>
+    <div id="logo-header">
+      <img src="./static/img/logo-header.png" alt="">
     </div>
-    <button id="continuar"></button>
+  </header>
+
+  <div id="zona-texto-intro">
+    <p class="texto-intro">Después de recopilar las principales propuestas de los candidatos presidenciales de Colombia, te invitamos a descubrir
+      a través de nuestro cuestionario con cuál candidato tienes mayor afinidad.
+      <br> Al finalizar, se revelará tu porcentaje de afinidad con cada candidato y te daremos una sugerencia para votar.</p>
   </div>
+  <div id="zona-pregunta">
+    <h1 class="titulo-pregunta">Pregunta
+      <span class="numero-pregunta">1</span>
+    </h1>
+    <p class="pregunta">Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta
+      Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta
+      Pregunta Pregunta
+    </p>
+  </div>
+
+  <div id="respuestas" class="flex-container">
+    <a href="#" id="si" class="button">Si</a>
+    <a href="#" id="no" class="button">No</a>
+    <a href="#" id="continuar" class="button">Continuar</a>
+
+
+  </div>
+
 
 
   <!--Scripts-->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="./static/js/loader.js"></script>
+  <script src="./static/js/intro.js"></script>
 </body>
 
 </html>

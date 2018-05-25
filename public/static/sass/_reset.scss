@@ -1,10 +1,125 @@
-body {
-    margin: 0;
-    padding: 0;
-    background-color: $background-color;
-    color: $main-text-color;
+body{
+    background: $background-white;
 }
 
-h1 {
-    margin: 0
+#logo-header{
+    max-width: 100%;
+    img{
+        max-width: 350px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
 }
+
+#zona-texto-intro{
+	max-width: 500px;
+	justify-content: center;
+    margin: 0 auto;
+    .texto-intro{
+        padding: 25px 20px;
+        font-size: 18px;
+        line-height: 25px;
+        font-family: sans-serif;
+        text-align: center;
+    }
+}
+
+
+
+#zona-pregunta{
+	max-width: 500px;
+	justify-content: center;
+	margin: 0 auto;
+}
+
+.titulo-pregunta{
+	padding: 25px 20px;
+	font-family: sans-serif;
+	text-align: center;
+}
+.pregunta{
+	padding: 25px 20px;
+	font-size: 18px;
+	line-height: 25px;
+	font-family: sans-serif;
+	text-align: center;
+}
+
+
+.flex-container {
+	display: flex;
+	justify-content: center;
+  }
+
+  .button{
+	  margin: 50px 5%;
+  }
+
+#si {
+	background-color:#56cc71;
+	-moz-border-radius:42px;
+	-webkit-border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:24px;
+	font-weight:bold;
+	padding:20px 60px;
+	text-decoration:none;
+	text-shadow:-1px 1px 5px #000000;
+}
+#si:hover {
+	background-color:#33804e;
+}
+#si:active {
+	position:relative;
+	top:1px;
+}
+
+#no {
+	background-color:#cc5252;
+	-moz-border-radius:42px;
+	-webkit-border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:24px;
+	font-weight:bold;
+	padding:20px 60px;
+	text-decoration:none;
+	text-shadow:-1px 1px 5px #000000;
+}
+#no:hover {
+	background-color:#803232;
+}
+#no:active {
+	position:relative;
+	top:1px;
+}
+
+#continuar {
+	background-color:#547ccc;
+	-moz-border-radius:42px;
+	-webkit-border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:24px;
+	font-weight:bold;
+	padding:20px 60px;
+	text-decoration:none;
+	text-shadow:-1px 1px 5px #000000;
+}
+#continuar:hover {
+	background-color:#335880;
+}
+#continuar:active {
+	position:relative;
+	top:1px;
+}
+
+
