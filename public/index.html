@@ -44,35 +44,37 @@
 
       <div class="divider"></div>
 
-      <select type="select" name="estrato" required autocomplete="off">
+      <select type="text" name="estrato" required autocomplete="off">
         <option value="" selected>Estrato</option>
-        <option value="0">1</option>
-        <option value="1">2</option>
-        <option value="2">3</option>
-        <option value="3">4</option>
-        <option value="4">5</option>
-        <option value="5">6</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
       </select>
 
+
+      <div class="divider"></div>
       <div class="divider"></div>
 
       <select type="select" name="profesion" required autocomplete="off">
-        <option value="" selected>Educación</option>
-        <option value="0">Primaria</option>
-        <option value="1">Bachiller</option>
-        <option value="2">Profesional</option>
-        <option value="3">Postgrado</option>
-        <option value="4">Doctorado</option>
-
+        <option value="" selected>Estudio</option>
+        <option value="1">Primaria</option>
+        <option value="2">Bachiller</option>
+        <option value="3">Profesional</option>
+        <option value="4">Postgrado</option>
+        <option value="5">Doctorado</option>
       </select>
-      <label for="profesion"></label>
 
       <div class="divider"></div>
+      <div class="divider"></div>
 
-      <select type="select" name="genero" required autocomplete="off">
+      <select type="text" name="genero" required autocomplete="off">
         <option value="" selected>Género</option>
-        <option value="0">Hombre</option>
-        <option value="1">Mujer</option>
+        <option value="male">Hombre</option>
+        <option value="female">Mujer</option>
+      </select>
     </form>
   </div>
 
@@ -81,15 +83,14 @@
     <h1 class="titulo-pregunta">Pregunta
       <span class="numero-pregunta">1</span>
     </h1>
-    <p class="pregunta">Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta
-      Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta Pregunta
-      Pregunta Pregunta
-    </p>
+    <div id="pregunta">
+      <!--Aqui va la pregunta-->
+    </div>
   </div>
 
   <div id="respuestas" class="flex-container">
     <a href="#" id="si" class="button">Si</a>
-    <a href="#" id="no" class="button">No</a>
+    <a href="#" id="no" class="button" onclick="undisteNonas">No</a>
     <a href="#" id="continuar" class="button">Continuar</a>
     <a href="#" id="continuar-formulario" class="button">Continuar</a>
 
@@ -101,7 +102,8 @@
   <!--Scripts-->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="./static/js/loader.js"></script>
-  <script src="./static/js/cambioPantallas.js"></script>
+  <script src="./static/js/intro.js"></script>
+  <script src="./static/js/cargarPreguntas.js"></script>
 </body>
 
 </html>
