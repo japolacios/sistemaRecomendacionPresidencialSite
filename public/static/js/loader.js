@@ -6,6 +6,12 @@ var contador = 1;
 var botonSi = document.querySelector("#si");
 var botonNo = document.querySelector("#no");
 var botonContinuarFormulario = document.querySelector("#continuar-formulario");
+var puntajePetro = 0;
+var puntajeFajardo = 0;
+var puntajeDuque = 0;
+var puntajeVargas = 0;
+var puntajeCalle = 0;
+
 
 
 $(document).ready(function () {
@@ -88,13 +94,14 @@ addToDom = function () {
 botonSi.addEventListener('click', undisteSisas);
 botonNo.addEventListener('click', undisteNonas);
 botonContinuarFormulario.addEventListener('click', appendPregunta);
+botonContinuarFormulario.addEventListener('click', mostrarInfo);
 
 //Cuando se unde el boton si
 function undisteSisas() {
     console.log("undiste sisas");
     contador += 1;
-    console.log(contador);
     appendPregunta();
+    sumarPuntaje();
     document.getElementById("numero-pregunta").innerHTML = "Pregunta " + contador + " de " + pollQuestionsProcesed.length;
 }
 
@@ -102,9 +109,11 @@ function undisteSisas() {
 function undisteNonas() {
     console.log("undiste nonas");
     contador += 1;
-    console.log(contador);
+    // console.log(contador);
     appendPregunta();
+    restarPuntaje();
     document.getElementById("numero-pregunta").innerHTML = "Pregunta " + contador + " de " + pollQuestionsProcesed.length;
+
 }
 
 
@@ -122,7 +131,55 @@ function appendPregunta() {
         document.getElementById("pregunta").appendChild(h);
         if (document.getElementById("pregunta") != "") {
         }
-        // p.appendChild("<p>" + h + "</p>");
+
     }
 }
+
+function sumarPuntaje() {
+    var petroJson = pollQuestionsProcesed[contador].petro;
+    var fajardoJson = pollQuestionsProcesed[contador].fajardo;
+    var duqueJson = pollQuestionsProcesed[contador].duque;
+    var vargasJson = pollQuestionsProcesed[contador].vargas;
+    var calleJson = pollQuestionsProcesed[contador].calle;
+
+    puntajePetro = puntajePetro += petroJson;
+    puntajeFajardo = puntajeFajardo += fajardoJson;
+    puntajeDuque = puntajeDuque += duqueJson;
+    puntajeVargas = puntajeVargas += vargasJson;
+    puntajeCalle = puntajeCalle += calleJson;
+
+    console.log(" petro: " + puntajePetro + " fajardo: " + puntajeFajardo + " duque: " + puntajeDuque + " vargas: " + puntajeVargas + " calle: " + puntajeCalle);
+}
+
+function restarPuntaje() {
+    var petroJson = pollQuestionsProcesed[contador].petro;
+    var fajardoJson = pollQuestionsProcesed[contador].fajardo;
+    var duqueJson = pollQuestionsProcesed[contador].duque;
+    var vargasJson = pollQuestionsProcesed[contador].vargas;
+    var calleJson = pollQuestionsProcesed[contador].calle;
+
+    puntajePetro = puntajePetro -= petroJson;
+    puntajeFajardo = puntajeFajardo -= fajardoJson;
+    puntajeDuque = puntajeDuque -= duqueJson;
+    puntajeVargas = puntajeVargas -= vargasJson;
+    puntajeCalle = puntajeCalle -= calleJson;
+
+    console.log(" petro: " + puntajePetro + " fajardo: " + puntajeFajardo + " duque: " + puntajeDuque + " vargas: " + puntajeVargas + " calle: " + puntajeCalle);
+}
+
+
+function mostrarInfo() {
+    var nombre = document.getElementById("nombre").value;
+    var edad = document.getElementById("edad").value;
+    var estrato = document.getElementById("estrato");
+    var estratoData = estrato.options[estrato.selectedIndex].text;
+    var estudio = document.getElementById("estudio");
+    var estudioData = estudio.options[estudio.selectedIndex].text;
+    var genero = document.getElementById("genero");
+    var generoData = genero.options[genero.selectedIndex].text;
+
+    console.log("nombre: " + nombre + " edad: " + edad + " estrato: " + estratoData + " estudio: " + estudioData + " genero: " + generoData);
+}
+
+
 
