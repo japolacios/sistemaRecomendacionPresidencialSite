@@ -46,8 +46,8 @@
             "interests": "Venecas",
             "lleras": 1,
             "name": "John Doe",
-            "petro": "2",
-            "profession": "Raponero",
+            "petro": 2,
+            "profession": 1,
             "socialStat": 1,
             "gender": "male"
         }
