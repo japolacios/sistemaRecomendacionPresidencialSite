@@ -11,10 +11,17 @@
     <meta name="keywords" content="perdicion,meVoyDelPais,Corrupcion,vendidos,fraude">
     <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
     <link rel="stylesheet" href="./static/css/main.css" type="text/css">
+    <link rel="stylesheet" href="./static/css/c3.css" type="text/css">
+    <!-- Scripts -->
+    <script src="./static/js/libs/d3.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="./static/js/libs/c3.js"></script>
 </head>
 
 <body>
     <div class="body-wrapper">
+        <div id="chart"></div>
+        <div id="chart2"></div>
         <!-- Start News Feed Section -->
         <div class="newsfeed" id="newsfeed">
             <div class="content-wrapper">
@@ -40,11 +47,41 @@
             </div>
         </div>
     </div>
+    <p id="male" data-value="{{theData.male}}"></p>
+    <p id="female" data-value="{{theData.female}}"></p>
 </body>
 
 
 
-<!-- Scripts -->
-
+<script>
+    var chart = c3.generate({
+        bindto: '#chart', data: {
+            columns: [
+                ['Hombres', document.getElementById("male").getAttribute('data-value')],
+                ['Mujeres', document.getElementById("female").getAttribute('data-value')],
+            ],
+            type: 'bar'
+        },
+        bar: {
+            width: {
+                ratio: 0.5 // this makes bar width 50% of length between ticks
+            }
+            // or
+            //width: 100 // this makes bar width 100px
+        }
+    });
+    var chart2 = c3.generate({
+        bindto: '#chart2', data: {// iris data from R
+            columns: [
+                ['Hombres', document.getElementById("male").getAttribute('data-value')],
+                ['Mujeres', document.getElementById("female").getAttribute('data-value')],
+            ],
+            type: 'pie',
+            onclick: function (d, i) { console.log("onclick", d, i); },
+            onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+            onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+        }
+    });
+</script>
 
 </html>
