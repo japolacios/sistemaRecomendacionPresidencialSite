@@ -1,11 +1,12 @@
 //ArrayList Donde se guardan las preguntas para recomendacion
 var pollQuestionsProcesed = [];
 var kQuestionsProcesed = [];
-var contador = 0;
+var contador = 1;
 
 var botonSi = document.querySelector("#si");
 var botonNo = document.querySelector("#no");
 var botonContinuarFormulario = document.querySelector("#continuar-formulario");
+
 
 $(document).ready(function () {
     //Gets the RAW JSON
@@ -31,7 +32,7 @@ $(document).ready(function () {
                 duque: tempData.duque,
             });
         }
-        // console.log(pollQuestionsProcesed);
+        console.log(pollQuestionsProcesed);
         //addToDom();
     });
     $.getJSON('https://recomendacionpresidencial.firebaseapp.com/getKq', function (data) {
@@ -56,7 +57,7 @@ $(document).ready(function () {
                 correcta: tempData.correcta,
             });
         }
-        console.log(kQuestionsProcesed);
+        //console.log(kQuestionsProcesed);
         //addToDom();
     });
 
@@ -88,16 +89,28 @@ botonSi.addEventListener('click', undisteSisas);
 botonNo.addEventListener('click', undisteNonas);
 botonContinuarFormulario.addEventListener('click', appendPregunta);
 
-
+//Cuando se unde el boton si
 function undisteSisas() {
     console.log("undiste sisas");
+    contador += 1;
+    console.log(contador);
+    appendPregunta();
+    document.getElementById("numero-pregunta").innerHTML = "Pregunta " + contador + " de " + pollQuestionsProcesed.length;
 }
 
+//Cuando se unde el boton no
 function undisteNonas() {
     console.log("undiste nonas");
+    contador += 1;
+    console.log(contador);
+    appendPregunta();
+    document.getElementById("numero-pregunta").innerHTML = "Pregunta " + contador + " de " + pollQuestionsProcesed.length;
 }
 
+
+//Append
 function appendPregunta() {
+    document.getElementById("numero-pregunta").innerHTML = "Pregunta " + contador + " de " + pollQuestionsProcesed.length;
     console.log("pinte la primera pregunta");
 
     if (contador <= pollQuestionsProcesed.length - 1) {
@@ -105,7 +118,11 @@ function appendPregunta() {
 
         var p = document.createElement("p");
         var h = document.createTextNode(pollQuestionsProcesed[contador].pregunta);
+        document.getElementById("pregunta").innerHTML = "";
         document.getElementById("pregunta").appendChild(h);
+        if (document.getElementById("pregunta") != "") {
+        }
         // p.appendChild("<p>" + h + "</p>");
     }
 }
+
