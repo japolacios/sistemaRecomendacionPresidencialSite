@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "",
   "version": "1.0.0",
   "description": "",
@@ -17,22 +16,3 @@
     "gulp-sass": "^3.1.0"
   }
 }
-=======
-    "name": "",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "gulp": "^3.9.1",
-        "gulp-autoprefixer": "^3.1.1",
-        "gulp-clean-css": "^3.0.4",
-        "gulp-htmlmin": "^3.0.0",
-        "gulp-sass": "^3.1.0"
-    }
-}
->>>>>>> 2e8ed4c6ed0ba25ed4b947f38e7a5d14c2fdc8c9
