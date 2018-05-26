@@ -149,11 +149,14 @@ function recalculateGlobalData(newUserData) {
     })
 }
 
-
+function processGlobalData(liveData) {
+    return liveData;
+}
 //let actualGlobalData = retreiveGlobalData();
 
 
 
 module.exports = {
-    recalculateGlobalData: recalculateGlobalData
+    recalculateGlobalData: recalculateGlobalData,
+    processGlobalData: processGlobalData
 }

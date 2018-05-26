@@ -5,8 +5,11 @@ const configKey = require('./../key');
 //console.log(configKey.getKey());
 firebase.initializeApp(configKey.getKey());
 
-
+//Import external functions
 var recalculateGlobalData = require('../control/global-data').recalculateGlobalData;
+var processGlobalData = require('../control/global-data').processGlobalData;
+
+
 //Function to retreive the Candidate Questions Stored in the database
 function retreivePoll() {
     console.log('Getting Raw Poll Questions From DataBase');
@@ -57,6 +60,7 @@ function retreiveKq() {
     });
 }
 
+//Function that receives the user data sent from the client
 function receiveUserData(userData) {
 
     console.log(userData.name);
@@ -83,6 +87,39 @@ function receiveUserData(userData) {
     console.log("Calling method recalculateGlobalData()");
     recalculateGlobalData(userData);
 }
+
+function liveGlobalData() {
+    var globalDataRef = firebase.database().ref('/global');
+
+    var mySnap = globalDataRef.once('value');
+
+    //Return the data gotten from the db reference snap
+    return mySnap.then(snap => {
+
+        const myVlaues = snap.val();
+
+        //console.log("SnapValues:", myVlaues);
+        return myVlaues;
+
+    }).catch(reason => {
+        //If there is any error
+        console.log(reason);
+    });
+
+    /*
+    return globalDataRef.on('value', snap => {
+
+        let myVlaues = snap.val();
+
+        //return processGlobalData(myVlaues);
+        return myVlaues;
+    });
+    */
+
+
+}
+
+
 exports.retreiveGlobalData = function () {
     console.log('Getting Global Data From DataBase');
 
@@ -116,8 +153,11 @@ exports.updateGlobalData = function (newGlobalData) {
     console.log("Global Data Updated");
 }
 
+
+
 module.exports = {
     retreivePoll: retreivePoll,
     receiveUserData: receiveUserData,
-    retreiveKq: retreiveKq
+    retreiveKq: retreiveKq,
+    liveGlobalData: liveGlobalData,
 };
