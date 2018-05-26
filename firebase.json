@@ -50,7 +50,7 @@
         "source": "/uploadUserData",
         "function": "uploadUserData"
       }, {
-        "source": "/hola",
+        "source": "/resumen",
         "function": "app"
       }
     ]
