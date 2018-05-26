@@ -1,5 +1,6 @@
 //ArrayList Donde se guardan las preguntas para recomendacion
 var pollQuestionsProcesed = [];
+var kQuestionsProcesed = [];
 var contador = 0;
 
 var botonSi = document.querySelector("#si");
@@ -31,6 +32,31 @@ $(document).ready(function () {
             });
         }
         // console.log(pollQuestionsProcesed);
+        //addToDom();
+    });
+    $.getJSON('https://recomendacionpresidencial.firebaseapp.com/getKq', function (data) {
+
+        var KQuestionData = [];
+        //Gets the key entries from the raw json
+        KQuestionData = Object.entries(data);
+
+        //console.log(KQuestionData);
+        for (var i = KQuestionData.length - 1; i >= 0; i--) {
+            //Gets the iterated object from the entries array
+            tempContainer = KQuestionData[i];
+            //Gets the second object from the itrated object ( the second one has the information)
+            tempData = tempContainer[1];
+            //Inserts the object into the array
+            kQuestionsProcesed.push({
+                pregunta: tempData.pregunta,
+                uno: tempData.vargas,
+                dos: tempData.dos,
+                tres: tempData.tres,
+                cuatro: tempData.cuatro,
+                correcta: tempData.correcta,
+            });
+        }
+        console.log(kQuestionsProcesed);
         //addToDom();
     });
 

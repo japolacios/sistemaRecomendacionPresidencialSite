@@ -34,20 +34,25 @@
       ]
     }],
     "rewrites": [{
-      "source": "/",
-      "destination": "/index.html"
-    }, {
-      "source": "/cuestionario",
-      "function": "helloWorld"
-    }, {
-      "source": "/getDatabase",
-      "function": "getDatabase"
-    }, {
-      "source": "/uploadUserData",
-      "function": "uploadUserData"
-    }, {
-      "source": "/hola",
-      "function": "app"
-    }]
+        "source": "/",
+        "destination": "/index.html"
+      }, {
+        "source": "/cuestionario",
+        "function": "helloWorld"
+      }, {
+        "source": "/getDatabase",
+        "function": "getDatabase"
+      }, {
+        "source": "/getKq",
+        "function": "getKq"
+      },
+      {
+        "source": "/uploadUserData",
+        "function": "uploadUserData"
+      }, {
+        "source": "/hola",
+        "function": "app"
+      }
+    ]
   }
 }

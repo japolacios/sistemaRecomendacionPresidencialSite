@@ -5,7 +5,11 @@ const configKey = require('./../key');
 firebase.initializeApp(configKey.getKey());
 
 //Reference to db
+
+//Recomentation
 var pollRef = firebase.database().ref('/poll');
+//generalQuestions
+var kqRef = firebase.database().ref('/kq');
 
 exports.uploadPollQuestions = function () {
     //Para cada elemento del Array se hace un puch a la base de datos
@@ -21,6 +25,25 @@ exports.uploadPollQuestions = function () {
             fajardo: data[index].fajardo,
             petro: data[index].petro,
             duque: data[index].duque
+        });
+
+    }
+}
+
+exports.uploadKqQuestions = function () {
+    //Para cada elemento del Array se hace un puch a la base de datos
+    for (let index = 0; index < data2.length; index++) {
+        const element = data2[index];
+
+        //Creo la nueva referencia de elemento para enviar a la base de datos
+        var newKqRef = kqRef.push();
+        newKqRef.set({
+            pregunta: data2[index].pregunta,
+            correcta: data2[index].correcta,
+            uno: data2[index].uno,
+            dos: data2[index].dos,
+            tres: data2[index].tres,
+            cuatro: data2[index].cuatro
         });
 
     }
@@ -434,3 +457,85 @@ var data = [{
         "calle": 1
     }
 ];
+
+var data2 = [{
+        "uno": "Uribe (2002-2006)",
+        "dos": "Uribe (2006-2010)",
+        "tres": "Santos (2010-2014)",
+        "cuatro": "Santos(2014-2018)",
+        "pregunta": "Cual considera que ha sido el periodo con m·s muertes a causa del conflicto armado?",
+        "correcta": "Uribe (2002-2006)"
+    },
+    {
+        "uno": "Uribe (2002-2006)",
+        "dos": "Uribe (2006-2010)",
+        "tres": "Santos (2010-2014)",
+        "cuatro": "Santos(2014-2018)",
+        "pregunta": "Cual considera que ha sido el periodo con menos muertes a causa del conflicto armado?",
+        "correcta": "Santos(2014-2018)"
+    },
+    {
+        "uno": "1600 H - 500 M",
+        "dos": "1200 H - 900 M",
+        "tres": "900 H - 1200 M",
+        "cuatro": "500 H - 1600 M",
+        "pregunta": "En el aÒo 2015 se suicidaron alrededor de 2100 personas en Colombia Cuales consideras que son las cifras que más se acercan a la realidad?",
+        "correcta": "1600 H - 500 M"
+    },
+    {
+        "uno": "Actos sexuales con menores de 14 años",
+        "dos": "Acceso carnal violento",
+        "tres": "PornografÌa infantil",
+        "cuatro": "Acto sexual violento",
+        "pregunta": "En el 2017 se reportaron alrededor de 21000 casos de delito sexual, cual crees que fueron los casos más reportados?",
+        "correcta": "Actos sexuales con menores de 14 años"
+    },
+    {
+        "uno": "Caldas",
+        "dos": "Huila",
+        "tres": "Antioquia",
+        "cuatro": "Risaralda",
+        "pregunta": "Cual considera que es el departamento que más café exporta en Colombia",
+        "correcta": "Caldas"
+    },
+    {
+        "uno": 2000,
+        "dos": 2005,
+        "tres": 2010,
+        "cuatro": 2015,
+        "pregunta": "Cual considera que ha sido el aÒo con más hectáreas bosque deforestadas?",
+        "correcta": 2000
+    },
+    {
+        "uno": "Bogotá DC",
+        "dos": "Antioquia",
+        "tres": "Valle del Cauca",
+        "cuatro": "Barranquilla",
+        "pregunta": "De los siguientes departamentos o ciudades, cual considera que tuvo más habitantes en el 2017?",
+        "correcta": "Bogotá DC"
+    },
+    {
+        "uno": "Guainía",
+        "dos": "VaupÈs",
+        "tres": "Amazonas",
+        "cuatro": "Antioquia",
+        "pregunta": "De los siguientes departamentos, cual considera que tuvo la mayor tasa de deserción secundaria en el 2016?",
+        "correcta": "Guainía"
+    },
+    {
+        "uno": "Alrededor de 20.000",
+        "dos": "Alrededor de 30.000",
+        "tres": "Alrededor de 40.000",
+        "cuatro": "Alrededor de 15.000",
+        "pregunta": "En el año 2015 se reportaron 47.248 casos de violencia entre parejas sentimentales, Cuantos de estos casos crees que corresponden a violencia contra las mujeres?",
+        "correcta": "Alrededor de 40.000"
+    },
+    {
+        "uno": "16 millones",
+        "dos": "25 millones",
+        "tres": "30 millones",
+        "cuatro": "36 millones",
+        "pregunta": "Alrededor de cuantos colombianos cree usted que están habilitados para votar a la presidencia este 2018?",
+        "correcta": "36 millones"
+    }
+]

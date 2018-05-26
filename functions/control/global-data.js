@@ -20,7 +20,7 @@ function recalculateGlobalData(newUserData) {
 
         //Male & female
         let male, female;
-        if (newUserData.gender == 'male') {
+        if (newUserData.gender === 'male') {
             male = actualGlobalData.male + 1;
             female = actualGlobalData.female
         } else {
@@ -34,24 +34,24 @@ function recalculateGlobalData(newUserData) {
         let primaria = actualGlobalData.primaria;
         let profesional = actualGlobalData.profesional;
         let doctorado = actualGlobalData.doctorado;
-        if (newUserData.profession == 1) {
+        if (newUserData.profession === 1) {
             //Primaria
             primaria++;
         }
-        if (newUserData.profession == 2) {
+        if (newUserData.profession === 2) {
             //Bachiller
             bachiller++;
         }
-        if (newUserData.profession == 3) {
+        if (newUserData.profession === 3) {
             //Profesional
             profesional++;
         }
-        if (newUserData.profession == 4) {
+        if (newUserData.profession === 4) {
             //PostGrado
             postgrado++;
 
         }
-        if (newUserData.profession == 5) {
+        if (newUserData.profession === 5) {
             //Doctorado
             doctorado++;
         }
@@ -81,22 +81,22 @@ function recalculateGlobalData(newUserData) {
         let estrato5 = actualGlobalData.estrato5;
         let estrato6 = actualGlobalData.estrato6;
 
-        if (newUserData.socialStat == 1) {
+        if (newUserData.socialStat === 1) {
             estrato1++;
         }
-        if (newUserData.socialStat == 2) {
+        if (newUserData.socialStat === 2) {
             estrato2++;
         }
-        if (newUserData.socialStat == 3) {
+        if (newUserData.socialStat === 3) {
             estrato3++;
         }
-        if (newUserData.socialStat == 4) {
+        if (newUserData.socialStat === 4) {
             estrato4++;
         }
-        if (newUserData.socialStat == 5) {
+        if (newUserData.socialStat === 5) {
             estrato1++;
         }
-        if (newUserData.socialStat == 6) {
+        if (newUserData.socialStat === 6) {
             estrato6++;
         }
 
@@ -142,7 +142,7 @@ function recalculateGlobalData(newUserData) {
         console.log("Calling the update Method");
         //updateGlobalData(newGlobalData);
         db.updateGlobalData(newGlobalData);
-
+        return console.log("Success");
 
     }).catch(reason => {
         console.log(reason);

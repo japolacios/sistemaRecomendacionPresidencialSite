@@ -10,6 +10,8 @@ exports.app = functions.https.onRequest(app);
 //Import the database modules
 //Retreive PollQuestions
 var pollQuestions = require('./model/database').retreivePoll;
+//Retreive KnowledgeQuestions
+var kQuestions = require('./model/database').retreiveKq;
 //Receive Information sent form Client with User Data
 var receiveData = require('./model/database').receiveUserData;
 
@@ -18,14 +20,7 @@ exports.helloWorld = functions.https.onRequest((request, response) => {
     response.send("Hello from Firebase!");
 });
 
-let holi = {
-    pregunta: "Hola khe ase?",
-    miguel: 1,
-    peter: 5,
-    tumama: 2
-}
-
-
+//Http method to respond the PollQuestions
 exports.getDatabase = functions.https.onRequest((request, response) => {
     pollQuestions().then(objectPollQuestions => {
         response.send(objectPollQuestions);
@@ -35,6 +30,17 @@ exports.getDatabase = functions.https.onRequest((request, response) => {
         console.log(reason);
     });
 });
+//Http method to respond the knowledgeQuestions
+exports.getKq = functions.https.onRequest((request, response) => {
+    kQuestions().then(objectKQuestions => {
+        response.send(objectKQuestions);
+        return objectKQuestions;
+    }).catch(reason => {
+        //If there is any error
+        console.log(reason);
+    });
+});
+
 
 exports.uploadUserData = functions.https.onRequest((request, response) => {
     console.log("Got Post");

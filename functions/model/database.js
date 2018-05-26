@@ -32,6 +32,31 @@ function retreivePoll() {
     });
 }
 
+//Function to retreive the General Questions Stored in the database
+function retreiveKq() {
+    console.log('Getting Raw General Questions From DataBase');
+
+    //Define the Database Reference to the candidate Questions
+    var kqRef = firebase.database().ref('/kq');
+    //Define the snap brought from the database reference
+    var mySnap = kqRef.once('value');
+
+    //Return the data gotten from the db reference snap
+    return mySnap.then(snap => {
+
+        const myVlaues = snap.val();
+
+        //console.log("SnapValues:", myVlaues);
+
+        //TODO: Must Preprocess the data to return an easy to handle json object
+        return myVlaues;
+
+    }).catch(reason => {
+        //If there is any error
+        console.log(reason);
+    });
+}
+
 function receiveUserData(userData) {
 
     console.log(userData.name);
@@ -94,5 +119,5 @@ exports.updateGlobalData = function (newGlobalData) {
 module.exports = {
     retreivePoll: retreivePoll,
     receiveUserData: receiveUserData,
-    //updateGlobalData: updateGlobalData
+    retreiveKq: retreiveKq
 };
