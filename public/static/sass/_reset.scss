@@ -28,7 +28,7 @@ body{
 
 
 
-#zona-pregunta{
+#zona-pregunta, #zona-pregunta-cultura-general{
 	max-width: 500px;
 	justify-content: center;
     margin: 0 auto;
@@ -40,7 +40,7 @@ body{
 }
 
 
-#pregunta{
+#pregunta, #zona-pregunta-cultura-general{
     height: 100px;
 	padding: 25px 20px;
 	font-size: 18px;

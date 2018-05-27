@@ -1,6 +1,7 @@
 document.onload = introduccion();
 function introduccion() {
     document.querySelector("#zona-pregunta").style.display = "none";
+    document.querySelector("#zona-pregunta-cultura-general").style.display = "none";
     document.querySelector("#si").style.display = "none";
     document.querySelector("#no").style.display = "none";
     document.querySelector("#formulario-demografico").style.display = "none";
@@ -33,6 +34,7 @@ function empezarPreguntas() {
     document.querySelector("#continuar-formulario").style.display = "none";
     document.querySelector("#zona-texto-intro").style.display = "none";
     document.querySelector("#zona-pregunta").style.display = "block";
+    document.querySelector("#zona-pregunta-cultura-general").style.display = "block";
     document.querySelector("#si").style.display = "inline-block";
     document.querySelector("#no").style.display = "inline-block";
     document.querySelector("#continuar").style.display = "none";

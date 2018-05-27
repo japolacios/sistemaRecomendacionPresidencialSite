@@ -113,25 +113,20 @@ function undisteNonas() {
     appendPregunta();
     restarPuntaje();
     document.getElementById("numero-pregunta").innerHTML = "Pregunta " + contador + " de " + pollQuestionsProcesed.length;
-
 }
 
 
-//Append
+//Append preguntas generales
 function appendPregunta() {
     document.getElementById("numero-pregunta").innerHTML = "Pregunta " + contador + " de " + pollQuestionsProcesed.length;
     console.log("pinte la primera pregunta");
 
     if (contador <= pollQuestionsProcesed.length - 1) {
         console.log(pollQuestionsProcesed[contador].pregunta);
-
         var p = document.createElement("p");
         var h = document.createTextNode(pollQuestionsProcesed[contador].pregunta);
         document.getElementById("pregunta").innerHTML = "";
         document.getElementById("pregunta").appendChild(h);
-        if (document.getElementById("pregunta") != "") {
-        }
-
     }
 }
 
