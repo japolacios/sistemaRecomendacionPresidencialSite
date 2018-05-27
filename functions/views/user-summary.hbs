@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Sistema de Recomendacion Electoral Presidencial 2018</title>
+    <meta name="author" content="Japo">
+    <meta name="description" content="Sistema de Recomendacion Presidencial 2018">
+    <meta name="keywords" content="perdicion,meVoyDelPais,Corrupcion,vendidos,fraude">
+    <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./static/css/c3.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <!-- Scripts -->
+    <script src="./static/js/libs/d3.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="./static/js/libs/c3.js"></script>
+
+</head>
+
+<body>
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">Resultados Generales</h1>
+        <p class="lead">Total de usuarios: {{theData.users}}</p>
+        <p class="lead">Promedio de Edades: {{theData.ageAvg}}
+
+        </p>
+        <p class="lead">Porcentaje promedio de conociemiento general: {{theData.generalQ}}</p>
+    </div>
+    <div class="container">
+        <!-- Afinidad -->
+        <div class="card-deck mb-3 text-center">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Porcentajes de Afinidad</h4>
+                </div>
+                <div id="candidatosPie">
+                </div>
+            </div>
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Cantidad de Puntos</h4>
+                </div>
+                <div id="candidatosBar">
+                </div>
+            </div>
+        </div>
+        <!-- Educacion -->
+        <div class="card-deck mb-3 text-center">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Segmentacion de Escolaridad</h4>
+                </div>
+                <div id="educacionBar">
+                </div>
+            </div>
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Proporcion de escolaridad</h4>
+                </div>
+                <div id="educacionPie">
+                </div>
+            </div>
+        </div>
+        <!-- Genero -->
+        <div class="card-deck mb-3 text-center">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Propocion en Genero</h4>
+                </div>
+                <div id="generoPie">
+                </div>
+            </div>
+        </div>
+        <!-- Estratos -->
+        <div class="card-deck mb-3 text-center">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Distribucion por estrato</h4>
+                </div>
+                <div id="estratoPie">
+                </div>
+            </div>
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Proporcion de Estratos</h4>
+                </div>
+                <div id="estratoBar">
+                </div>
+            </div>
+        </div>
+
+
+        <footer class="pt-4 my-md-5 pt-md-5 border-top">
+            <div class="row">
+            </div>
+        </footer>
+    </div>
+    <p id="male" data-value="{{theData.male}}"></p>
+    <p id="female" data-value="{{theData.female}}"></p>
+    <p id="ageAvg" data-value="{{theData.ageAvg}}"></p>
+    <p id="bachiller" data-value="{{theData.bachiller}}"></p>
+    <p id="calle" data-value="{{theData.calle}}"></p>
+    <p id="doctorado" data-value="{{theData.doctorado}}"></p>
+    <p id="duque" data-value="{{theData.duque}}"></p>
+    <p id="estrato1" data-value="{{theData.estrato1}}"></p>
+    <p id="estrato2" data-value="{{theData.estrato2}}"></p>
+    <p id="estrato3" data-value="{{theData.estrato3}}"></p>
+    <p id="estrato4" data-value="{{theData.estrato4}}"></p>
+    <p id="estrato5" data-value="{{theData.estrato5}}"></p>
+    <p id="estrato6" data-value="{{theData.estrato6}}"></p>
+    <p id="fajardo" data-value="{{theData.fajardo}}"></p>
+    <p id="generalQ" data-value="{{theData.generalQ}}"></p>
+    <p id="petro" data-value="{{theData.petro}}"></p>
+    <p id="postgrado" data-value="{{theData.postgrado}}"></p>
+    <p id="primaria" data-value="{{theData.primaria}}"></p>
+    <p id="profesional" data-value="{{theData.profesional}}"></p>
+    <p id="scholarshipAvg" data-value="{{theData.scholarshipAvg}}"></p>
+    <p id="users" data-value="{{theData.users}}"></p>
+    <p id="vargas" data-value="{{theData.vargas}}"></p>
+    <script src="./static/js/general-data.js"></script>
+</body>
+
+</html>
