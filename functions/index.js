@@ -100,9 +100,14 @@ app.get('/resumen', function (request, response) {
         response.render('summary', {
             theData
         });
+        return "";
+    }).catch(reason => {
+        //If there is any error
+        console.log(reason);
     });
 
 });
+
 
 //Cors
 app.get('/hola', (request, response) =>
