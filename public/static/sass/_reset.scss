@@ -1,10 +1,10 @@
-body{
+body {
     background: $background-white;
 }
 
-#logo-header{
+#logo-header {
     max-width: 100%;
-    img{
+    img {
         max-width: 300px;
         height: auto;
         display: block;
@@ -13,11 +13,11 @@ body{
     }
 }
 
-#zona-texto-intro{
-	max-width: 500px;
-	justify-content: center;
+#zona-texto-intro {
+    max-width: 500px;
+    justify-content: center;
     margin: 0 auto;
-    .texto-intro{
+    .texto-intro {
         padding: 25px 20px;
         font-size: 18px;
         line-height: 25px;
@@ -26,114 +26,122 @@ body{
     }
 }
 
-
-
-#zona-pregunta, #zona-pregunta-cultura-general{
-	max-width: 500px;
-	justify-content: center;
+#zona-pregunta,
+#zona-pregunta-cultura-general {
+    max-width: 500px;
+    justify-content: center;
     margin: 0 auto;
-    .titulo-pregunta{
+    .titulo-pregunta {
         padding: 25px 20px;
         font-family: sans-serif;
         text-align: center;
     }
 }
 
-
-#pregunta, #zona-pregunta-cultura-general{
+#pregunta,
+#zona-pregunta-cultura-general {
     height: 100px;
-	padding: 25px 20px;
-	font-size: 18px;
-	line-height: 25px;
-	font-family: sans-serif;
-	text-align: center;
+    padding: 25px 20px;
+    font-size: 18px;
+    line-height: 25px;
+    font-family: sans-serif;
+    text-align: center;
 }
 
+#zona-pregunta-cultura-general {
+    display: none;
+}
 
 .flex-container {
-	display: flex;
-	justify-content: center;
-  }
+    display: flex;
+    justify-content: center;
+}
 
-  .button{
-	  margin: 50px 5%;
-  }
+.button {
+    margin: 50px 5%;
+}
 
 #si {
-	background-color:$light-green;
-	-moz-border-radius:42px;
-	-webkit-border-radius:42px;
-	display:inline-block;
-	cursor:pointer;
-	color:$white;
-	font-family:Arial;
-	font-size:24px;
-	font-weight:bold;
-	padding:20px 60px;
-	text-decoration:none;
-	text-shadow:-1px 1px 5px #000000;
+    background-color: $light-green;
+    border-radius: 42px;
+    display: inline-block;
+    cursor: pointer;
+    color: $white;
+    font-family: Arial;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px 60px;
+    text-decoration: none;
+    text-shadow: -1px 1px 5px #000000;
 }
+
 #si:hover {
-	background-color:$dark-green;
+    background-color: $dark-green;
 }
+
 #si:active {
-	position:relative;
-	top:1px;
+    position: relative;
+    top: 1px;
 }
 
 #no {
-	background-color:$light-red;
-	-moz-border-radius:42px;
-	-webkit-border-radius:42px;
-	display:inline-block;
-	cursor:pointer;
-	color:$white;
-	font-family:Arial;
-	font-size:24px;
-	font-weight:bold;
-	padding:20px 60px;
-	text-decoration:none;
-	text-shadow:-1px 1px 5px $black;
+    background-color: $light-red;
+    border-radius: 42px;
+    display: inline-block;
+    cursor: pointer;
+    color: $white;
+    font-family: Arial;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px 60px;
+    text-decoration: none;
+    text-shadow: -1px 1px 5px $black;
 }
+
 #no:hover {
-	background-color:$dark-red;
+    background-color: $dark-red;
 }
+
 #no:active {
-	position:relative;
-	top:1px;
+    position: relative;
+    top: 1px;
 }
 
-#continuar, #continuar-formulario {
-	background-color:$light-blue;
-	-moz-border-radius:42px;
-	-webkit-border-radius:42px;
-	display:inline-block;
-	cursor:pointer;
-	color:$white;
-	font-family:Arial;
-	font-size:24px;
-	font-weight:bold;
-	padding:20px 60px;
-	text-decoration:none;
-	text-shadow:-1px 1px 5px $black;
+#continuar,
+#continuar-formulario,
+.continue {
+    background-color: $light-blue;
+    border-radius: 42px;
+    display: inline-block;
+    cursor: pointer;
+    color: $white;
+    font-family: Arial;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px 60px;
+    text-decoration: none;
+    text-shadow: -1px 1px 5px $black;
 }
-#continuar-formulario:hover {
-	background-color:$dark-blue;
+
+#continuar-formulario:hover,
+.continue:hover {
+    background-color: $dark-blue;
 }
-#continuar-formulario:active {
-	position:relative;
-	top:1px;
+
+#continuar-formulario:active,
+.continue:active {
+    position: relative;
+    top: 1px;
 }
+
 #continuar:hover {
-	background-color:$dark-blue;
+    background-color: $dark-blue;
 }
+
 #continuar:active {
-	position:relative;
-	top:1px;
+    position: relative;
+    top: 1px;
 }
-
-
-
 
 form {
     display: block;
@@ -143,9 +151,9 @@ form {
     margin: 50px auto;
     background: $white;
     padding: 50px 30px;
-  }
+}
 
-  label {
+label {
     display: block;
     position: relative;
     top: -20px;
@@ -154,9 +162,10 @@ form {
     font-size: 16px;
     transition: all 0.3s ease;
     z-index: 1;
-  }
+}
 
-  input, select {
+input,
+select {
     display: block;
     position: relative;
     width: 100%;
@@ -165,24 +174,34 @@ form {
     font-size: 16px;
     z-index: 2;
     background: none;
-  }
+}
 
-  input:focus,
-  input:valid {
+input:focus,
+input:valid {
     outline: none;
     border-bottom: 1px solid $light-blue;
-  }
+}
 
-  input:focus + label,
-  input:valid + label {
+input:focus+label,
+input:valid+label {
     font-size: 12px;
     top: -40px;
     color: $light-blue;
-  }
+}
 
-  .divider {
+.divider {
     display: block;
     width: 100%;
-    height:30px;
+    height: 30px;
     background: none;
-  }
+}
+
+.button-list {
+    display: none;
+    flex-direction: column;
+    margin-top: 1em;
+    .continue {
+        font-size: 0.9em;
+        margin: 0.2em;
+    }
+}

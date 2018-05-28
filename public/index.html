@@ -16,13 +16,20 @@
   <meta name="keywords" content="perdicion,meVoyDelPais,Corrupcion,vendidos,fraude">
   <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
   <link rel="stylesheet" href="./static/css/main.css" type="text/css">
+  <link rel="stylesheet" href="./static/css/c3.css" type="text/css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <!-- Scripts -->
+  <script src="./static/js/libs/d3.js"></script>
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="./static/js/libs/c3.js"></script>
 
 </head>
 
 <body id="domBody">
   <header>
     <div id="logo-header">
-      <img src="./static/img/logo-header.png" alt="">
+      <img src="./static/img/logo-header.png" alt="logo-header">
     </div>
   </header>
 
@@ -88,12 +95,21 @@
     </div>
   </div>
 
-  <div id="zona-pregunta-cultura-general">
+  <div id="zona-pregunta-cultura-general" style="display:none;">
     <h2 class="titulo-pregunta-cultura-general">
-      <span id="numero-pregunta-cultura-general"></span>
+      <span id="numero-pregunta-cultura-general">Preguntas de Conocimiento General</span>
     </h2>
     <div id="pregunta-cultura-general">
       <!--Aqui va la pregunta-->
+      A continuacion vienen una serie de preguntas de conocimiento general, si no estas seguro de su respuesta, indica la que creas
+      mas indicada. Buena Suerte!
+    </div>
+    <a href="#" id="startkQ" class="continue" style="margin: 1em;">Continuar</a>
+    <div id="button-list" class="button-list">
+      <a href="#" id="a1" class="continue" onclick="validate(1);">Repuesta 1</a>
+      <a href="#" id="a2" class="continue" onclick="validate(2);">Respuesta 2</a>
+      <a href="#" id="a3" class="continue" onclick="validate(3);">Repuesta 3</a>
+      <a href="#" id="a4" class="continue" onclick="validate(4);">Repuesta 4</a>
     </div>
   </div>
 
@@ -101,7 +117,7 @@
 
   <div id="respuestas" class="flex-container">
     <a href="#" id="si" class="button">Si</a>
-    <a href="#" id="no" class="button" onclick="undisteNonas">No</a>
+    <a href="#" id="no" class="button">No</a>
     <a href="#" id="continuar" class="button">Continuar</a>
     <a href="#" id="continuar-formulario" class="button">Continuar</a>
 
@@ -109,6 +125,42 @@
   </div>
 
 
+  <!--Resultados-->
+  <div class="container" id="results" style="display: none;">
+    <!-- Afinidad -->
+    <div class="card-deck mb-3 text-center">
+      <div class="card mb-4 box-shadow">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal">Porcentajes de Afinidad:</h4>
+        </div>
+        <div id="candidatosPie">
+        </div>
+      </div>
+      <div class="card mb-4 box-shadow">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal">Tu Candidato sugerido es:</h4>
+        </div>
+        <div id="candidatosSugerido">
+        </div>
+      </div>
+    </div>
+    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+      <div class="row">
+      </div>
+    </footer>
+    <!--Proporcion de Afinidad-->
+    <div class="card-deck mb-3 text-center">
+      <div class="card mb-4 box-shadow">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal">Porcentaje de Correctas Generales</h4>
+        </div>
+        <div id="resultadosPie">
+        </div>
+      </div>
+    </div>
+
+    <a href="/resumen" class="button">Ver Resultados Generales</a>
+  </div>
 
   <!--Scripts-->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
