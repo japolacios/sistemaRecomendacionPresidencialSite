@@ -123,7 +123,7 @@ function liveGlobalData() {
         updateGlobalData(processGlobalData(userArray));
 
         //console.log("SnapValues:", userArray);
-        return userArray;
+        return myVlaues;
 
     }).catch(reason => {
         //If there is any error
@@ -133,7 +133,7 @@ function liveGlobalData() {
 }
 
 
-exports.retreiveGlobalData = function () {
+function retreiveGlobalData() {
     console.log('Getting Global Data From DataBase');
 
     //Define the Database Reference to the candidate Questions
@@ -182,4 +182,5 @@ module.exports = {
     receiveUserData: receiveUserData,
     retreiveKq: retreiveKq,
     liveGlobalData: liveGlobalData,
+    retreiveGlobalData: retreiveGlobalData,
 };

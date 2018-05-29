@@ -44,6 +44,7 @@ var pollQuestions = require('./model/database').retreivePoll;
 //Retreive KnowledgeQuestions
 var kQuestions = require('./model/database').retreiveKq;
 //Retreive Live Global Data
+var retreiveGlobalData = require('./model/database').retreiveGlobalData;
 var liveGlobalData = require('./model/database').liveGlobalData;
 const db = require('./model/database');
 //Information Receiving
@@ -96,10 +97,11 @@ exports.uploadUserData = functions.https.onRequest((request, response) => {
 
 
 app.get('/resumen', function (request, response) {
-    liveGlobalData().then(theData => {
+    retreiveGlobalData().then(theData => {
         response.render('summary', {
             theData
         });
+        console.log(theData);
         return "";
     }).catch(reason => {
         //If there is any error
