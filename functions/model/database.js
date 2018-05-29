@@ -85,11 +85,12 @@ function receiveUserData(userData) {
 
     console.log("New User Data Uploaded to database");
     console.log("Calling method recalculateGlobalData()");
-    recalculateGlobalData(userData);
+    //recalculateGlobalData(userData);
+    liveGlobalData();
 }
 
 function liveGlobalData() {
-    var globalDataRef = firebase.database().ref('/global');
+    var globalDataRef = firebase.database().ref('/userData');
 
     var mySnap = globalDataRef.once('value');
 
@@ -97,25 +98,37 @@ function liveGlobalData() {
     return mySnap.then(snap => {
 
         const myVlaues = snap.val();
+        var allUsers = [];
+        allUsers = Object.entries(myVlaues);
+        var userArray = [];
 
-        //console.log("SnapValues:", myVlaues);
-        return myVlaues;
+        for (let index = 0; index < allUsers.length; index++) {
+            const element = allUsers[index];
+            tempUser = element[1];
+            //console.log("Age: ", tempUser.age);
+            userArray.push({
+                age: tempUser.age,
+                socialStat: tempUser.socialStat,
+                profession: tempUser.profession,
+                fajardo: tempUser.fajardo,
+                petro: tempUser.petro,
+                lleras: tempUser.lleras,
+                calle: tempUser.calle,
+                duque: tempUser.duque,
+                generalTest: tempUser.generalTest,
+                gender: tempUser.gender
+            })
+        }
+
+        updateGlobalData(processGlobalData(userArray));
+
+        //console.log("SnapValues:", userArray);
+        return userArray;
 
     }).catch(reason => {
         //If there is any error
         console.log(reason);
     });
-
-    /*
-    return globalDataRef.on('value', snap => {
-
-        let myVlaues = snap.val();
-
-        //return processGlobalData(myVlaues);
-        return myVlaues;
-    });
-    */
-
 
 }
 
@@ -142,7 +155,7 @@ exports.retreiveGlobalData = function () {
     });
 }
 
-exports.updateGlobalData = function (newGlobalData) {
+function updateGlobalData(newGlobalData) {
     //function updateGlobalData(newGlobalData) {
 
     //console.log("Sending Update to server", newGlobalData);
@@ -153,7 +166,16 @@ exports.updateGlobalData = function (newGlobalData) {
     console.log("Global Data Updated");
 }
 
+//Pollyfill method para compatibilidad con sistemas antiguos
+Object.entries = function (obj) {
+    var ownProps = Object.keys(obj),
+        i = ownProps.length,
+        resArray = new Array(i); // preallocate the Array
+    while (i--)
+        resArray[i] = [ownProps[i], obj[ownProps[i]]];
 
+    return resArray;
+};
 
 module.exports = {
     retreivePoll: retreivePoll,

@@ -268,7 +268,7 @@ function paintResults() {
         data: {
             columns: [
                 ['Correctas', correctas],
-                ['Incorrectas', 100 - correctas]
+                ['Incorrectas', (100 - correctas)]
             ],
             type: 'pie',
             onclick: function (d, i) {
